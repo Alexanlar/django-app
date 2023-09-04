@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Base Title
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block body %}
+    Base body
+{% endblock %}
+
+<div>
+    <br>
+    {% now 'H:i' %}
+</div>
+<br>
+<div>
+    {% if user.is_authenticated %}
+        <div>User: {{ user }}</div>
+        <div><a href="{% url 'myauth:logout' %}">Logout</a></div>
+    {% else %}
+        <div><a href="{% url 'myauth:login' %}">Login</a></div>
+    {% endif %}
+</div>
+</body>
+</html>

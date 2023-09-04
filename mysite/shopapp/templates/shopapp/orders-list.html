@@ -1,0 +1,50 @@
+{% extends 'shopapp/base.html' %}
+{% load cache %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    {% if owner %}
+        <h1>
+            User {{ owner.username }}
+            {% if orders %}
+                completed the following orders:
+            {% else %}
+                no orders yet:
+            {% endif %}
+        </h1>
+    {% else %}
+        <h1>Orders:</h1>
+    {% endif %}
+        {% if orders %}
+            {% cache 30 order owner.username %}
+            <div>
+                {% for order in orders %}
+                    <div>
+                        <div><a href="{% url "shopapp:order_details" pk=order.pk %}">Order #{{ order.pk }}</a></div>
+                        <div>User: {% firstof order.user.first_name order.user.username %}</div>
+                        {#                <div>Promocode: <code>{{ order.promocode }}</code></div>#}
+                        {#                <div>Delivery address: {{ order.delivery_address }}</div>#}
+                        Products in order:
+                        {% for product in order.products.all %}
+                            <li>{{ product.name }} for ${{ product.price }}</li>
+                        {% endfor %}
+                    </div>
+                    <br>
+                {% endfor %}
+
+            </div>
+            {% endcache %}
+        {% else %}
+            <h3>No orders yet</h3>
+        {% endif %}
+    <br>
+    <div><a href="{% url 'shopapp:order_create' %}">Create a new order</a></div>
+    {% if user.is_staff or owner%}
+{#        <div><a href="{% url 'shopapp:order_export' %}">Export orders </a></div>#}
+        <div><a href="{{ request.get_full_path }}export">Export orders </a></div>
+    {% endif %}
+    <div><a href="{% url 'shopapp:index' %}">Back to shop</a></div>
+{% endblock %}

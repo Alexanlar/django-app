@@ -1,0 +1,158 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "PC",
+      "description": "",
+      "price": "2909.00",
+      "discount": 20,
+      "created_at": "2023-04-24T21:01:51.857Z",
+      "archived": true,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "description": "asdfg",
+      "price": "909.00",
+      "discount": 20,
+      "created_at": "2023-04-24T21:01:51.878Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Desktop",
+      "description": "qwerty",
+      "price": "1234.00",
+      "discount": 0,
+      "created_at": "2023-05-12T11:32:34.079Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "Desc",
+      "description": "qert",
+      "price": "123.00",
+      "discount": 0,
+      "created_at": "2023-05-12T11:33:24.088Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "Desc",
+      "description": "qert",
+      "price": "123.00",
+      "discount": 0,
+      "created_at": "2023-05-12T11:36:09.966Z",
+      "archived": true,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "PC2",
+      "description": "Best PC",
+      "price": "-1234.12",
+      "discount": 0,
+      "created_at": "2023-05-12T11:37:21.516Z",
+      "archived": true,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "Telephone",
+      "description": "qweasd",
+      "price": "2.00",
+      "discount": 0,
+      "created_at": "2023-05-17T07:59:57.389Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "Desc3",
+      "description": "tgtfrfsdf",
+      "price": "555.00",
+      "discount": 5,
+      "created_at": "2023-05-17T08:17:08.122Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 10,
+    "fields": {
+      "name": "Desc3",
+      "description": "tgtfrfsdf",
+      "price": "555.00",
+      "discount": 5,
+      "created_at": "2023-05-17T08:18:29.370Z",
+      "archived": true,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 11,
+    "fields": {
+      "name": "SasaPhone",
+      "description": "asdqwe",
+      "price": "123.00",
+      "discount": 0,
+      "created_at": "2023-05-24T17:18:12.713Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 12,
+    "fields": {
+      "name": "Sasa Desktop",
+      "description": "1234qweqwe",
+      "price": "2345.00",
+      "discount": 0,
+      "created_at": "2023-05-24T17:28:54.999Z",
+      "archived": false,
+      "created_by": 3
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 13,
+    "fields": {
+      "name": "User Product",
+      "description": "User Product",
+      "price": "2.00",
+      "discount": 0,
+      "created_at": "2023-05-24T18:01:43.170Z",
+      "archived": false,
+      "created_by": 1
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Product' %} #{{ product.pk }}
+{% endblock %}
+
+{% block body %}
+    <h1>{% translate 'Product' %} <strong>{{ product.name }}</strong></h1>
+    <div>
+        {% blocktranslate with description=product.description price=product.price %}
+            <div>Description: <em>{{ description }}</em></div>
+            <div>Price: {{ price }}</div>
+        {% endblocktranslate %}
+        <div>
+            {% blocktranslate count product.discount as discount %}
+                Discount is {{ discount }} percent
+                {% plural %}
+                Discount is {{ discount }} percent
+            {% endblocktranslate %}
+        </div>
+        {% blocktranslate with created_by=product.created_by archived=product.archived %}
+            <div>User Created: {{ created_by }}</div>
+            <div>Archived: {{ archived }}</div>
+        {% endblocktranslate %}
+    </div>
+    <br>
+    <div>
+        {% if perms.shopapp.add_product and user == product.created_by %}
+            <div><a href="{% url 'shopapp:product_update' pk=product.pk %}">{% translate 'Update product' %}</a></div>
+        {% endif %}
+        <div><a href="{% url 'shopapp:product_delete' pk=product.pk %}">{% translate 'Delete product' %}</a></div>
+        <div><a href="{% url 'shopapp:products_list' %}">{% translate 'Back to products list' %}</a></div>
+    </div>
+{% endblock %}

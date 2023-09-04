@@ -1,0 +1,20 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    File upload
+{% endblock %}
+
+{% block body %}
+    <h1>Upload file</h1>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        <input type="file" name="myfile">
+    </p>
+        <p>{{ big_file }}</p>
+    <button type="submit">Upload</button>
+    {% if big_file %}
+        <p1 style="color: darkred">Файл слишком большой</p1>
+    {% endif %}
+    </form>
+{% endblock %}
